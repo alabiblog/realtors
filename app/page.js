@@ -1,103 +1,201 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+import Aos from "aos"
+import Image from "next/image"
+import Link from "next/link"
+import { useState } from "react";
+import {Swiper,SwiperSlide} from "swiper/react"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/autoplay"
+import "swiper/css/navigation"
+import {Autoplay,Pagination,Navigation} from "swiper/modules"
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+export default function Home(){
+    return(
+        <main >
+            <div className="hidden lg:block lg:flex lg:items-center">
+                <div className="w-55  h-60">
+                   <div className="w-30 h-80  items-center flex border bg-blue-700">
+                       <h1 className="origin-bottom transform rotate-90 justify-center text-white text-1xl">View my listing</h1>
+                   </div>
+                </div>
+                <div  className="w-267  h-180 relative">
+                      <Image
+                      height={500}
+                       width={500}
+                       src={"/pr1.avif"}
+                       alt="1"
+                       className="w-260 h-180"/>
+                       <h1 className="absolute top-5 p-20 text-7xl font-bold ">Your Future Home <br/> Is Right Here</h1>
+                </div>
+            </div>
+            <div className=" min-h-screen lg:mx-auto w-130">
+                <p className="ml-30 lg:ml-0 text-center mt-20 text-2xl ">Feature Property</p>
+                <div className="ml-20 relative w-full h-80  mt-20 lg:ml-13">
+                     <Image
+                      height={500}
+                       width={500}
+                       src={"/pr1.avif"}
+                       alt="1"
+                       className="w-full h-80"/>
+                       <Link href={"/compo/property1"}><p className="w-30 text-2xl text-center p-3 text-white bg-blue-950 absolute bottom-0 right-0">Rent +</p></Link>
+                 </div>
+                 <div className="w-full ml-20 lg:ml-13 mt-8 py-5 border-b ">
+                 <p  className="text-sm">Project Name</p>
+                 <p  className="text-2xl text-gray-400">Dryzler Building</p>
+                </div>
+                 <div  className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Address</p>
+                 <p  className="text-2xl text-gray-400">500 Terry Francois Street San Francisco</p>
+                </div>
+                 <div  className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b flex gap-10">
+                    <p>Sqft <br/><span className="text-2xl text-gray-400">450</span></p>
+                    <p>Floor <br/><span className="text-2xl text-gray-400">3</span></p>
+                    <p>Total Rooms <br/><span className="text-2xl text-gray-400">5</span></p>
+                    
+                 </div>
+                 <div className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Price</p>
+                 <p  className="text-2xl text-gray-400">$2,460</p>
+                </div>
+
+
+                 <div className="ml-20 relative w-full lg:ml-13 h-80  mt-20">
+                     <Image
+                      height={500}
+                       width={500}
+                       src={"/wayo.avif"}
+                       alt="1"
+                       className="w-full h-80"/>
+                       <Link href={"/compo/property2"}><p className="w-30 text-2xl text-center p-3 text-white bg-blue-950 absolute bottom-0 right-0">Rent +</p></Link>
+                 </div>
+                 <div className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Project Name</p>
+                 <p  className="text-2xl text-gray-400">Barnebie Plaza</p>
+                </div>
+                 <div  className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Address</p>
+                 <p  className="text-2xl text-gray-400">500 Terry Francois Street San Francisco</p>
+                </div>
+                 <div  className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b flex gap-10">
+                    <p>Sqft <br/><span className="text-2xl text-gray-400">600</span></p>
+                    <p>Floor <br/><span className="text-2xl text-gray-400">11</span></p>
+                    <p>Total Rooms <br/><span className="text-2xl text-gray-400">6</span></p>
+                
+                 </div>
+                 <div className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Price</p>
+                 <p  className="text-2xl text-gray-400">$3,460</p>
+                </div>
+
+
+                <div className="ml-20 relative w-full lg:ml-13  h-80  mt-20">
+                     <Image
+                      height={500}
+                       width={500}
+                       src={"/zip.avif"}
+                       alt="1"
+                       className="w-full h-80"/>
+                       <Link href={"/compo/property3"}><p className="w-30 text-2xl text-center p-3 text-white bg-blue-950 absolute bottom-0 right-0">Rent +</p></Link>
+                 </div>
+                 <div className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Project Name</p>
+                 <p  className="text-2xl text-gray-400">Bankers Building</p>
+                </div>
+                 <div  className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Address</p>
+                 <p  className="text-2xl text-gray-400">500 Terry Francois Street San Francisco</p>
+                </div>
+                 <div  className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b flex gap-10">
+                    <p>Sqft <br/><span className="text-2xl text-gray-400">780</span></p>
+                    <p>Floor <br/><span className="text-2xl text-gray-400">2</span></p>
+                    <p>Total Rooms <br/><span className="text-2xl text-gray-400">7</span></p>
+                
+                 </div>
+                 <div className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Price</p>
+                 <p  className="text-2xl text-gray-400">$3,325,500</p>
+                </div>
+
+
+                <div className="ml-20 relative w-full lg:ml-13  h-80  mt-20">
+                     <Image
+                      height={500}
+                       width={500}
+                       src={"/mzm.avif"}
+                       alt="1"
+                       className="w-full h-80"/>
+                       <p className="w-30 text-2xl text-center p-3 text-white bg-blue-950 absolute bottom-0 right-0">Rent +</p>
+                 </div>
+                 <div className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Project Name</p>
+                 <p  className="text-2xl text-gray-400">Dolores Plaza</p>
+                </div>
+                 <div  className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Address</p>
+                 <p  className="text-2xl text-gray-400">500 Terry Francois Street San Francisco</p>
+                </div>
+                 <div  className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b flex gap-10">
+                    <p>Sqft <br/><span className="text-2xl text-gray-400">670</span></p>
+                    <p>Floor <br/><span className="text-2xl text-gray-400">4</span></p>
+                    <p>Total Rooms <br/><span className="text-2xl text-gray-400">6</span></p>
+                
+                 </div>
+                 <div className="w-full ml-20 lg:ml-13  mt-8 py-5 border-b ">
+                 <p  className="text-sm">Price</p>
+                 <p  className="text-2xl text-gray-400">$3,450,000</p>
+                </div>
+           </div>
+
+                <p className="ml-30  py-15 lg:ml-0 text-center mt-20 text-2xl ">Why Work With Me?</p>
+              <div className=" lg:flex xl:flex xl:ml-1 ">
+                <div className="border bg-orange-500 h-90 w-160 ml-5 lg:mt-0 lg:ml-0 lg:w-85 xl:w-105 xl:mt-0 xl:ml-0">
+                  <div className="w-160 bg-white border h-85 lg:w-85 xl:w-105">
+                    <p className="text-6xl font-bold text-center mt-30 text-orange-500">Exclusive</p>
+                    <p className="text-2xl text-center mt-5">I'm a paragraph. Click here to add your own text and edit me.</p>
+                  </div>
+                </div>
+                <div className="border  bg-orange-700 h-90 w-160 ml-5 mt-3 lg:mt-0 lg:w-85 lg:ml-0 xl:mt-0 xl:ml-0 xl:w-105">
+                  <div className="w-160 bg-white border h-85 lg:w-85 xl:w-105">
+                    <p className="text-6xl font-bold text-center mt-30 text-orange-700">Available</p>
+                    <p className="text-2xl text-center mt-5">I'm a paragraph. Click here to add your own text and edit me.</p>
+                  </div>
+                </div>
+                <div className="border  bg-blue-700 h-90 w-160 ml-5 mt-3 lg:mt-0 lg:ml-0 lg:w-85 xl:w-105 xl:mt-0 xl:ml-0">
+                    <div className="w-160 bg-white border h-85 lg:w-85  xl:w-105">
+                        <p className="text-6xl font-bold text-center mt-30 text-blue-700">Flexible</p>
+                    <p className="text-2xl text-center mt-5">I'm a paragraph. Click here to add your own text and edit me. </p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-sm ml-65 mt-20">What My Clients Say</p>
+              <div className=" my-5">
+              <Swiper
+                 modules={[Autoplay,Pagination,Navigation]}
+                autoplay={{display:3000}}
+                pagination={{clickable:true}}
+                 navigation
+                loop={true}
+                speed={1}
+                className="w-170 h-70  lg:mt-20 ">
+                    <SwiperSlide className="w-full h-full">
+                     <p className="text-3xl p-20">“Jimoh Sherif is one of the best and reliable real estate company with affordable and satisfacting houses fast and reliable.”</p>
+                    </SwiperSlide>    
+                    <SwiperSlide className="w-full h-full">
+                     <p className="text-3xl p-20">“just 24hrs after i request for an apartment Jimoh Sherif company provide it immediatly without wasting time the are indeed fast and reliable .”</p>
+                    </SwiperSlide>
+                     <SwiperSlide className="w-full h-full">
+                      <p className="text-3xl p-20">“over 10 years of dealing with real estate agent i can say Jimoh Sherif Realtors are the top of there league fast afordable reliable and safty guarentee location.”</p>
+                    </SwiperSlide>
+                     <SwiperSlide className="w-full h-full">
+                      <p className="text-3xl p-20">“i got my dream house from them after 8hrs of apply for it very fast, also i dold my house and it all weny well the are trust worthy and perfect when it comes to realtor activity.”</p>
+                    </SwiperSlide>
+
+                 </Swiper>
+                 </div>
+        </main>
+    )
 }
