@@ -12,9 +12,20 @@ import "swiper/css/navigation"
 import {Autoplay,Pagination,Navigation} from "swiper/modules"
 
 
+
+
+
 export default function Home(){
     return(
-        <main >
+      
+        <main>
+
+         
+
+
+
+
+
             <div className="hidden lg:block lg:flex lg:items-center">
                 <div className="w-55  h-60">
                    <div className="w-30 h-80  items-center flex border bg-blue-700">
