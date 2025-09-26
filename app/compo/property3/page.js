@@ -156,7 +156,7 @@ export default function Property3(){
                 <p className="text-sm ml-10 mt-20">Building Info</p>
                  <p className="p-10">This item is connected to a text field in your content collection.<br/> Double click what you want to edit and then select "Change Content"<br/> to add your own content to the collection. Want to view and manage <br/> all your collections? Click the Content Manager icon on the add panel <br/> to your left. In the Content Manager, you can update items, add new <br/> fields, create dynamic pages and more.</p>
                 <div className="mx-2 w-170 bg-gray-100 lg:w-180">
-                  <h1 className="text-4xl font-bold p-10">Interested in <br/> this <br/> property?</h1>
+                  <h1 className="text-4xl font-bold p-10 text-black">Interested in <br/> this <br/> property?</h1>
                   <form
                   onSubmit={handleSubmit} className="ml-1 lg:ml-5">
                     <div className="flex gap-3 ml-3">
@@ -212,7 +212,7 @@ export default function Property3(){
                      {touched.phone && errors.phone ? <span className="text-sm text-red-500">{errors.phone}</span> : null}
 
                     </div>
-                    <div className="ml-2">
+                    <div className="ml-2 my-3">
                     <button type="submit" className="mt-10 text-2xl w-30 p-2 bg-blue-700 text-white">Submit</button>
                      </div>
                   </form>
