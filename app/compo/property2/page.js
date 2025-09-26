@@ -212,8 +212,8 @@ export default function Property2(){
                      {touched.phone && errors.phone ? <span className="text-sm text-red-500">{errors.phone}</span> : null}
 
                     </div>
-                    <div className="ml-2 my-3">
-                    <button type="submit" className="mt-10 text-2xl w-30 p-2 bg-blue-700 text-white">Submit</button>
+                    <div className="ml-2 ">
+                    <button type="submit" className="mt-10 my-5 text-2xl w-30 p-2 bg-blue-700 text-white">Submit</button>
                      </div>
                   </form>
                   </div>
@@ -231,7 +231,7 @@ export default function Property2(){
                   </div>
                 <div
                 className={` fixed top-0 right-0 z-50 h-full w-full bg-gray-100 duration-1000 ease-in-out ${visible? "translate-x-0" : "translate-x-full"}`}>
-                 <button onClick={()=>setVisible(false)} className="text-3xl text-black absolute right-5 font-bold top-5 ">✕</button>
+                 <button onClick={()=>setVisible(false)} className="text-3xl text-black absolute right-10 font-bold top-10 ">✕</button>
                  <Swiper
                  modules={[Autoplay,Pagination,Navigation]}
                 autoplay={{display:3000}}
